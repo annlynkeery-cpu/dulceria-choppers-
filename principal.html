@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esquimos Keery - Inicio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+    <header class="header-principal">
+        <div class="header-content">
+            <div class="logo">Esquimos Keery</div>
+            <div class="slogan">“Un antojo dulce y un sabor irresistible”</div>
+        </div>
+    </header>
+
+    <div class="contenedor-layout">
+        <nav class="menu-vertical">
+            <a href="#inicio" class="nav-item">Principal</a>
+            <a href="#nosotros" class="nav-item">Nosotros</a>
+            <a href="#productos" class="nav-item">Productos</a>
+            <a href="#carrito-seccion" class="nav-item">Mi Carrito (<span id="contador-menu">0</span>)</a>
+            <a href="#pedidos" class="nav-item">Pedidos</a>
+            <a href="#ofertas" class="nav-item">Ofertas</a>
+        </nav>
+
+        <main class="contenido">
+            
+            <section id="inicio">
+                <h2>Bienvenidos a nuestra cocina</h2>
+                <p>Disfruta de los frappes más cremosos y las hamburguesas más deliciosas en el ambiente más dulce. Usa el menú de la izquierda para armar tu orden.</p>
+                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?w=800&auto=format&fit=crop&q=60" alt="Hamburguesas y Malteadas" class="img-banner">
+            </section>
+
+            <hr>
+
+            <section id="nosotros">
+                <h2>Nosotros</h2>
+                <div class="nosotros-grid">
+                    <div class="nosotros-card">
+                        <h3>Nuestra Ubicación</h3>
+                        <p>📍 Calle Principal #123, Colonia Pastel, Ciudad Neza.</p>
+                        <img src="https://images.unsplash.com/photo-1525648199074-cee30ba79a4a?w=400&auto=format&fit=crop&q=60" alt="Ubicación" class="img-nosotros">
+                    </div>
+                    <div class="nosotros-card">
+                        <h3>Nuestro Local</h3>
+                        <p>Un espacio mágico y aesthetics diseñado para ti.</p>
+                        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?w=400&auto=format&fit=crop&q=60" alt="Nuestro Local" class="img-nosotros">
+                    </div>
+                    <div class="nosotros-card">
+                        <h3>Nuestras Empleadas</h3>
+                        <p>Nuestro equipo siempre listo para atenderte con una sonrisa.</p>
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&auto=format&fit=crop&q=60" alt="Nuestro Equipo" class="img-nosotros">
+                    </div>
+                    <div class="quejas-box">
+                        <h3>Línea de Quejas y Sugerencias</h3>
+                        <p>Tu opinión nos ayuda a mejorar. Llámanos al: <strong>55-1234-5678</strong></p>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <section id="productos">
+                <h2>Nuestros Productos</h2>
+                <p>Haz clic en "Agregar" para armar tu pedido:</p>
+                
+                <div class="menu-productos-grid">
+                    <div class="categoria-bloque">
+                        <h3>🌸 Frappes Crema</h3>
+                        <div class="producto-item">
+                            <span>Frappe de Oreo - <strong>$55.00</strong></span> 
+                            <button onclick="agregarAlCarrito('Frappe de Oreo', 55)">Agregar</button>
+                        </div>
+                        <div class="producto-item">
+                            <span>Frappe de Chocolate - <strong>$50.00</strong></span> 
+                            <button onclick="agregarAlCarrito('Frappe de Chocolate', 50)">Agregar</button>
+                        </div>
+                        <div class="producto-item">
+                            <span>Frappe de Pay de Limón - <strong>$55.00</strong></span> 
+                            <button onclick="agregarAlCarrito('Frappe de Pay de Limón', 55)">Agregar</button>
+                        </div>
+                        <div class="producto-item">
+                            <span>Frappe de Vainilla - <strong>$50.00</strong></span> 
+                            <button onclick="agregarAlCarrito('Frappe de Vainilla', 50)">Agregar</button>
+                        </div>
+                    </div>
+
+                    <div class="categoria-bloque">
+                        <h3>🍔 Hamburguesas y Snacks</h3>
+                        <div class="producto-item">
+                            <span>Hamburguesa de Pollo - <strong>$75.00</strong></span> 
+                            <button onclick="agregarAlCarrito('Hamburguesa de Pollo', 75)">Agregar</button>
+                        </div>
+                        <div class="producto-item">
+                            <span>Hamburguesa de Carne - <strong>$85.00</strong></span> 
+                            <button onclick="agregarAlCarrito('Hamburguesa de Carne', 85)">Agregar</button>
+                        </div>
+                        <div class="producto-item">
+                            <span>Papas Fritas - <strong>$35.00</strong></span> 
+                            <button onclick="agregarAlCarrito('Papas Fritas', 35)">Agregar</button>
+                        </div>
+                        <div class="producto-item">
+                            <span>Aros de Cebolla - <strong>$40.00</strong></span> 
+                            <button onclick="agregarAlCarrito('Aros de Cebolla', 40)">Agregar</button>
+                        </div>
+                    </div>
+
+                    <div class="categoria-bloque">
+                        <h3>🥤 Bebidas Frías</h3>
+                        <div class="producto-item">
+                            <span>Refresco de Limón - <strong>$25.00</strong></span> 
+                            <button onclick="agregarAlCarrito('Refresco de Limón', 25)">Agregar</button>
+                        </div>
+                        <div class="producto-item">
+                            <span>Refresco Coca-Cola - <strong>$25.00</strong></span> 
+                            <button onclick="agregarAlCarrito('Refresco Coca-Cola', 25)">Agregar</button>
+                        </div>
+                        <div class="producto-item">
+                            <span>Jugos Naturales - <strong>$30.00</strong></span> 
+                            <button onclick="agregarAlCarrito('Jugos Naturales', 30)">Agregar</button>
+                        </div>
+                        <div class="producto-item">
+                            <span>Cervezas - <strong>$45.00</strong></span> 
+                            <button onclick="agregarAlCarrito('Cervezas', 45)">Agregar</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <section id="carrito-seccion">
+                <h2>🛒 Mi Carrito de Compras</h2>
+                <div class="carrito-contenedor">
+                    <ul id="lista-carrito" class="lista-carrito">
+                        <li class="carrito-vacio">Tu carrito está vacío. ¡Agrega tus antojos favoritos!</li>
+                    </ul>
+                    <div class="carrito-total">
+                        <strong>Total a pagar: $<span id="total-precio">0.00</span></strong>
+                    </div>
+                    <button class="btn-procesar" onclick="procesarAFormulario()">Confirmar Pedido</button>
+                </div>
+            </section>
+
+            <hr>
+
+            <section id="pedidos">
+                <h2>Formulario de Pedido (Envío a Supabase)</h2>
+                <form class="formulario-pedidos" id="pedido-form">
+                    <label>Nombre Completo:</label>
+                    <input type="text" id="form-nombre" required placeholder="Ej. Ana Martínez">
+
+                    <label>Fecha:</label>
+                    <input type="date" id="form-fecha" required>
+
+                    <label>Tu Orden (Se genera automáticamente desde tu carrito):</label>
+                    <textarea rows="4" id="form-detalles" readonly required placeholder="Tu carrito aparecerá detallado aquí de forma automática..."></textarea>
+
+                    <label>Dirección de Entrega:</label>
+                    <input type="text" id="form-direccion" required placeholder="Calle, número, colonia o referencias">
+
+                    <label>Forma de Pago:</label>
+                    <select id="form-pago">
+                        <option value="Efectivo">Efectivo al recibir</option>
+                        <option value="Tarjeta">Tarjeta de Crédito/Débito</option>
+                        <option value="Transferencia">Transferencia bancaria</option>
+                    </select>
+
+                    <button type="submit" class="btn-enviar">Enviar Pedido</button>
+                </form>
+            </section>
+
+            <hr>
+
+            <section id="ofertas">
+                <h2>Ofertas Especiales</h2>
+                <div class="oferta-card">
+                    <h3>Combo Keery Pastel 🌸</h3>
+                    <p>¡Todos los jueves! Llévate cualquier Hamburguesa + un Frappe por un precio especial de locura.</p>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <script>
+        let carrito = [];
+
+        function agregarAlCarrito(nombre, precio) {
+            const productoExistente = carrito.find(item => item.nombre === nombre);
+            if (productoExistente) {
+                productoExistente.cantidad += 1;
+            } else {
+                carrito.push({ nombre, precio, cantidad: 1 });
+            }
+            actualizarInterfazCarrito();
+        }
+
+        function eliminarDelCarrito(nombre) {
+            carrito = carrito.filter(item => item.nombre !== nombre);
+            actualizarInterfazCarrito();
+        }
+
+        function actualizarInterfazCarrito() {
+            const listaHTML = document.getElementById('lista-carrito');
+            const totalHTML = document.getElementById('total-precio');
+            const contadorMenu = document.getElementById('contador-menu');
+            
+            listaHTML.innerHTML = '';
+            
+            if (carrito.length === 0) {
+                listaHTML.innerHTML = '<li class="carrito-vacio">Tu carrito está vacío. ¡Agrega tus antojos favoritos!</li>';
+                totalHTML.innerText = '0.00';
+                contadorMenu.innerText = '0';
+                document.getElementById('form-detalles').value = '';
+                return;
+            }
+
+            let total = 0;
+            let totalItems = 0;
+            
+            carrito.forEach(item => {
+                const subtotal = item.precio * item.cantidad;
+                total += subtotal;
+                totalItems += item.cantidad;
+
+                const li = document.createElement('li');
+                li.className = 'carrito-item';
+                li.innerHTML = `
+                    <span><strong>${item.nombre}</strong> (x${item.cantidad}) - $${subtotal.toFixed(2)}</span>
+                    <button class="btn-eliminar" onclick="eliminarDelCarrito('${item.nombre}')">Quitar</button>
+                `;
+                listaHTML.appendChild(li);
+            });
+
+            totalHTML.innerText = total.toFixed(2);
+            contadorMenu.innerText = totalItems;
+
+            sincronizarFormularioTexto(total);
+        }
+
+        function sincronizarFormularioTexto(total) {
+            let textoOrden = "";
+            carrito.forEach(item => {
+                textoOrden += `- ${item.nombre} x${item.cantidad} ($${(item.precio * item.cantidad).toFixed(2)})\n`;
+            });
+            textoOrden += `TOTAL: $${total.toFixed(2)}`;
+            document.getElementById('form-detalles').value = textoOrden;
+        }
+
+        function procesarAFormulario() {
+            if (carrito.length === 0) {
+                alert("Por favor, agrega productos al carrito antes de continuar.");
+                return;
+            }
+            document.getElementById('pedidos').scrollIntoView();
+        }
+
+        // Poner fecha actual por defecto
+        document.getElementById('form-fecha').value = new Date().toISOString().split('T')[0];
+    </script>
+</body>
+</html>
